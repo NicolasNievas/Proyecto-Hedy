@@ -1,6 +1,7 @@
-import Container from "@/app/_components/container";
+import React from 'react';
+import Container from '@/app/_components/container';
 
-export function Footer() {
+const Footer = () => {
   return (
     <footer className="footer bg-neutral-50 border-t border-neutral-200 py-4">
       <Container>
