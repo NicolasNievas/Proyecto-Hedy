@@ -5,9 +5,6 @@ const Navbar = () => {
   return (
     <nav className="navbar fixed top-0 left-0 w-full bg-white shadow-md z-10">
       <div className="container mx-auto py-4 px-6 flex justify-between items-center">
-        {/* <button className="text-3xl font-bold focus:outline-none" onClick={() => window.location.href = '/'}>
-          ML.
-        </button> */}
         <Link href="/">
             <button className='text-3xl font-bold focus:outline-none'>
                 Ecoomerce
