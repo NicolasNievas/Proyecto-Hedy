@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Footer from "../components/footer";
-import Navbar from "../components/navbar";
+import { Raleway } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
+
+import Footer from "../components/organisms/Footer";
+import Navbar from "../components/organisms/Navbar";
+
+import { DataProvider } from "@/context/data.context";
+import ToastProvider from "@/context/toast.context";
+
+const raleway = Raleway({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Proyecto Hedy",
@@ -18,9 +23,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Navbar />
-      <body className={inter.className}>{children}</body>
-      <Footer />
+      <body className={raleway.className}>
+        <DataProvider>
+          <ToastProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </ToastProvider>
+        </DataProvider>
+      </body>
     </html>
   );
 }
